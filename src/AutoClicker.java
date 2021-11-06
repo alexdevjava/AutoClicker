@@ -1,11 +1,17 @@
 import java.awt.*;
 import java.awt.event.MouseEvent;
+import java.util.Random;
 
 public class AutoClicker {
     public static void MainFunction() {
-        while(true){
-            leftClick();
-            delay(6.5);
+        try {
+            while(true){
+                leftClick();
+                Random r = new Random();
+                delay(50+r.nextInt(10));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }
